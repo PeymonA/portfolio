@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.profilePicture {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
