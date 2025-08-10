@@ -64,13 +64,30 @@ function App() {
       </div>
 
       <div className='body'>
-        <div className='section'>
+
+        <div className='section' style={{margin:'2%'}}>
+          <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%'}}/>
           <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
+          <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%'}}/>
+        </div>
+        <div className='section' style={{justifyContent:'space-around'}}>
+          <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%'}}/>
+          <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%'}}/>
+        </div>
+
+        <div className='section'>          
           <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
         </div>
         <div className='section'>
-          <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
-          <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
+          <Project title='Server Side for Ako Maori' description={projects.get('Server Side for Ako Maori').at(0)} link={projects.get('Server Side for Ako Maori').at(1)}/>
+          <Project title='Client Side for Ako Maori' description={projects.get('Client Side for Ako Maori').at(0)} link={projects.get('Client Side for Ako Maori').at(1)}/>
+        </div>
+        <div className='section'>
+          <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
+          <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
+        </div>
+        <div className='section'>
+          <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
         </div>
       </div>
 

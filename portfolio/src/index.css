@@ -17,3 +17,8 @@
   display: flex;
   justify-content: center;
 }
+
+.photoSection {
+  display: flex;
+  flex-direction: column;
+}
