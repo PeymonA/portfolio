@@ -16,6 +16,10 @@
 .section {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: rgb(224, 224, 224);
+  border-radius: 1%;
+  margin: 2%;
 }
 
 .photoSection {

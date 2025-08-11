@@ -1,7 +1,8 @@
 import './App.css'
 import './index.css'
 
-import Button from './components/button'
+import { useWindowSize } from "@uidotdev/usehooks";
+
 import Project from './components/Project'
 
 const projects = new Map([
@@ -49,51 +50,114 @@ const projects = new Map([
 
 function App() {
 
-  return (
-    <>
-    <div className="page">
+  const size = useWindowSize();
 
-      <div className='header'>
-        <img src='./profile_picture.png' alt='profile_picture'
-          className='profilePicture'/>
+  console.log(size);
+  if (size.width >= 600) {
+    return (
+      <>
+      <div className="page">
+
+        <div className='header'>
+          <img src='./profile_picture.png' alt='profile_picture'
+            className='profilePicture'/>
+        </div>
+
+        <div className='nav' style={{gap:'1%', marginTop:'1%'}}>
+          <a href="https://github.com/PeymonA" class="btn btn-primary"><i class="bi bi-github"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/peymon-armand-a9629b258/" class="btn btn-primary"><i class="bi bi-linkedin"></i>LinkedIn</a>
+        </div>
+
+        <div className='body'>
+
+          <h1 style={{justifySelf:'center', marginTop:'5%'}}>Projects</h1>
+
+          <div className='section' style={{margin:'2%', alignItems:'baseline', flexWrap:'wrap'}}>
+            <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
+            <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%' , margin:'1%'}}/>
+            <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%' , margin:'1%'}}/>
+            <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%' , margin:'1%'}}/>
+            <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%' , margin:'1%'}}/>
+          </div>
+
+          <div className='section' style={{flexWrap:'wrap'}}>          
+            <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
+            <img src='./concert_booking.png' alt='concert_booking' style={{width:'30%', height:'30%', marginBottom:'1%'}}/>
+          </div>
+          
+          <div className='section'>
+            <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
+            <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
+          </div>
+
+          <div className='section'>
+            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
+          </div>
+        </div>
+
       </div>
+      </>
+    )
+  }
+  else {
+    return (
+      
+      <>
+        <div className="page">
+        <div className='header'>
+          <img src='./profile_picture.png' alt='profile_picture'
+            className='profilePicture'/>
+        </div>
 
-      <div className='nav'>
-        <Button/>
-        <Button/>
+        <div className='nav' style={{gap:'1%', marginTop:'1%'}}>
+          <a href="https://github.com/PeymonA" class="btn btn-primary"><i class="bi bi-github"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/peymon-armand-a9629b258/" class="btn btn-primary"><i class="bi bi-linkedin"></i>LinkedIn</a>
+        </div>
+
+        <div className='body'>
+          <div className='section' style={{margin:'2%', alignItems:'baseline'}}>
+            <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
+          </div>
+          <div className='section'>
+            <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%', margin:'1%'}}/>
+            <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%', margin:'1%'}}/>
+          </div>
+          <div className='section'>
+            <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%', margin:'1%'}}/>
+            <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%', margin:'1%'}}/>
+          </div>
+
+          <div className='section' style={{marginTop:'10%', marginLeft:'1%' }}>          
+            <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
+          </div>
+          <div className='section'>
+            <img src='./concert_booking.png' alt='concert_booking' style={{width:'90%', height:'90%', marginBottom:'4%'}}/>  
+          </div>
+        
+          <div className='section' style={{flexDirection:'column'}}>
+            <Project title='Client Side for Ako Maori' description={projects.get('Client Side for Ako Maori').at(0)} link={projects.get('Client Side for Ako Maori').at(1)}/>
+            <Project title='Server Side for Ako Maori' description={projects.get('Server Side for Ako Maori').at(0)} link={projects.get('Server Side for Ako Maori').at(1)}/>
+            <img src='./ako_maori.png' alt='ako_maori' style={{width:'90%', height:'90%', marginBottom:'4%'}}/> 
+          </div>
+          
+          <div className='section'>
+            <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
+          </div>
+
+          <div className='section'>
+            <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
+          </div>
+          
+          <div className='section'>
+            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
+          </div>
+        </div>
+
       </div>
-
-      <div className='body'>
-
-        <div className='section' style={{margin:'2%'}}>
-          <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%'}}/>
-          <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
-          <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%'}}/>
-        </div>
-        <div className='section' style={{justifyContent:'space-around'}}>
-          <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%'}}/>
-          <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%'}}/>
-        </div>
-
-        <div className='section'>          
-          <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
-        </div>
-        <div className='section'>
-          <Project title='Server Side for Ako Maori' description={projects.get('Server Side for Ako Maori').at(0)} link={projects.get('Server Side for Ako Maori').at(1)}/>
-          <Project title='Client Side for Ako Maori' description={projects.get('Client Side for Ako Maori').at(0)} link={projects.get('Client Side for Ako Maori').at(1)}/>
-        </div>
-        <div className='section'>
-          <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
-          <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
-        </div>
-        <div className='section'>
-          <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
-        </div>
-      </div>
-
-    </div>
-    </>
-  )
+      </>
+      
+    );
+  }
 }
 
 export default App
