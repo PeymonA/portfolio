@@ -44,6 +44,10 @@ const projects = new Map([
   ['Bouncing Program', [
     "The Bouncing Program is a Java program which animates user selected shapes bouncing off the screem. The project involves working with design patterns and Java's Swing API. The Bouncing Program is a model/view application that presents two views of a list of bouncing shapes in the program. Such applications are commonplace and introduce the need for views to be mutually consistent and synchronised with a data structure whose state changes at run-time.",
     "https://github.com/PeymonA/A_Bouncing_Program"
+  ]],
+  ['AI Car Classifier', [
+    "The Car Classifier is a web application running on Flask which uses a Microsoft Custom Vision AI model which I trained to classify a car from a photo. It can tell you if the car is a Sedan, SUV or Truck. The application uses a model exported to TensorFlow.",
+    "https://github.com/PeymonA/AI-Car-Classifier-Webapp"
   ]]
 
 ]);
@@ -84,15 +88,17 @@ function App() {
             <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
             <img src='./concert_booking.png' alt='concert_booking' style={{width:'30%', height:'30%', marginBottom:'1%'}}/>
           </div>
+
+          <div className='section'>
+            <Project title= 'AI Car Classifier' description={projects.get('AI Car Classifier').at(0)} link={projects.get('AI Car Classifier').at(1)}/>
+            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
+          </div>
           
           <div className='section'>
             <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
             <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
           </div>
 
-          <div className='section'>
-            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
-          </div>
         </div>
 
       </div>
@@ -118,11 +124,9 @@ function App() {
           <div className='section' style={{margin:'2%', alignItems:'baseline'}}>
             <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
           </div>
-          <div className='section'>
+          <div className='section' style={{display:'flex', flexWrap:'wrap'}}>
             <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%', margin:'1%'}}/>
             <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%', margin:'1%'}}/>
-          </div>
-          <div className='section'>
             <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%', margin:'1%'}}/>
             <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%', margin:'1%'}}/>
           </div>
@@ -133,11 +137,13 @@ function App() {
           <div className='section'>
             <img src='./concert_booking.png' alt='concert_booking' style={{width:'90%', height:'90%', marginBottom:'4%'}}/>  
           </div>
-        
-          <div className='section' style={{flexDirection:'column'}}>
-            <Project title='Client Side for Ako Maori' description={projects.get('Client Side for Ako Maori').at(0)} link={projects.get('Client Side for Ako Maori').at(1)}/>
-            <Project title='Server Side for Ako Maori' description={projects.get('Server Side for Ako Maori').at(0)} link={projects.get('Server Side for Ako Maori').at(1)}/>
-            <img src='./ako_maori.png' alt='ako_maori' style={{width:'90%', height:'90%', marginBottom:'4%'}}/> 
+
+          <div className='section'>
+            <Project title= 'AI Car Classifier' description={projects.get('AI Car Classifier').at(0)} link={projects.get('AI Car Classifier').at(1)}/>
+          </div>
+
+          <div className='section'>
+            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
           </div>
           
           <div className='section'>
@@ -148,9 +154,6 @@ function App() {
             <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
           </div>
           
-          <div className='section'>
-            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
-          </div>
         </div>
 
       </div>
