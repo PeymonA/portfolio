@@ -1,13 +1,11 @@
 import './App.css'
 import './index.css'
 
-import { useWindowSize } from "@uidotdev/usehooks";
-
 import Project from './components/Project'
 
 const projects = new Map([
   ['Inner Peace', [
-    "Inner Peace was my capstone project for the university of auckland. Our client requested an software solution for children struggling with ADHD in the classroom. Inner Peace was implemnted in React Native and it contains a game of wack a mole containing nice animations, a combo function and high scores. It contains a mindfulness section which helps with deep breathing aswell as a music player. It contains a self survery of the user's mental health and a statistics section so that the user can see their improvment. And finally it contains data tracking of the users activity and reported mental health sending this data to the cloud for our client",
+    "Inner Peace was my capstone project for the university of auckland. Our client requested an software solution for children struggling with ADHD in the classroom. Inner Peace was implemented in React Native and it contains a game of wack a mole containing nice animations, a combo function and high scores. It contains a mindfulness section which helps with deep breathing aswell as a music player. It contains a self survery of the user's mental health and a statistics section so that the user can see their improvment. And finally it contains data tracking of the users activity and reported mental health sending this data to the cloud for our client",
     "https://drive.google.com/file/d/17IZptk32Q9TpkUMUyI05OjCqIccJqAg6/view"
   ]],
   
@@ -53,11 +51,6 @@ const projects = new Map([
 ]);
 
 function App() {
-
-  const size = useWindowSize();
-
-  console.log(size);
-  if (size.width >= 600) {
     return (
       <>
       <div className="page">
@@ -67,36 +60,68 @@ function App() {
             className='profilePicture'/>
         </div>
 
-        <div className='nav' style={{gap:'1%', marginTop:'1%'}}>
-          <a href="https://github.com/PeymonA" class="btn btn-primary"><i class="bi bi-github"></i>GitHub</a>
-          <a href="https://www.linkedin.com/in/peymon-armand-a9629b258/" class="btn btn-primary"><i class="bi bi-linkedin"></i>LinkedIn</a>
-        </div>
-
         <div className='body'>
-
-          <h1 style={{justifySelf:'center', marginTop:'5%'}}>Projects</h1>
-
-          <div className='section' style={{margin:'2%', alignItems:'baseline', flexWrap:'wrap'}}>
-            <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
-            <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%' , margin:'1%'}}/>
-            <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%' , margin:'1%'}}/>
-            <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%' , margin:'1%'}}/>
-            <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%' , margin:'1%'}}/>
-          </div>
-
-          <div className='section' style={{flexWrap:'wrap'}}>          
-            <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
-            <img src='./concert_booking.png' alt='concert_booking' style={{width:'30%', height:'30%', marginBottom:'1%'}}/>
-          </div>
-
-          <div className='section'>
-            <Project title= 'AI Car Classifier' description={projects.get('AI Car Classifier').at(0)} link={projects.get('AI Car Classifier').at(1)}/>
-            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
-          </div>
           
           <div className='section'>
-            <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
-            <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
+            <h2>About Me</h2>
+            <p>My name is Peymon Armand. I graduated from the University of Auckland in 2024 with a Bachelor of Computer Science, and I am currently pursuing a diploma in Digital Technology Development and Design with Mission Ready HQ. I enjoy working across the full stack, exploring how different technologies come together to create real-world solutions. Throughout my studies, I’ve loved experimenting with a wide range of tools, libraries, and frameworks, and I’m always excited to keep learning and building.
+            </p>
+          </div>
+
+          <div className='section'>
+          <h2>Projects</h2>
+
+            <div className='project_section'>
+              <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
+              <div className='photo_section'>
+                <img src='./game.png' alt='inner_peace_game'/>
+                <img src='./breathe.png' alt='inner_peace_breathe'/>
+                <img src='./music_player.png' alt='inner_peace_music_player'/>
+                <img src='./stats.png' alt='inner_peace_stats'/>
+              </div>
+            </div>
+
+
+
+            <div className='project_section'>          
+              <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
+              <div className='photo_section'>
+                <img src='./concert_booking.png' alt='concert_booking'/>
+              </div>
+            </div>
+
+            <div className='project_section'>
+              <Project title= 'AI Car Classifier' description={projects.get('AI Car Classifier').at(0)} link={projects.get('AI Car Classifier').at(1)}/>
+            </div>
+
+            <div className='project_section'>
+              <Project title= 'Server Side for Ako Maori' description={projects.get('Server Side for Ako Maori').at(0)} link={projects.get('Server Side for Ako Maori').at(1)}/>
+            </div>
+
+            <div className='project_section'>
+              <Project title= 'Client Side for Ako Maori' description={projects.get('Client Side for Ako Maori').at(0)} link={projects.get('Client Side for Ako Maori').at(1)}/>
+              <div className='photo_section'>
+                <img src='./ako_maori.png' alt='ako_maori'/>
+              </div>
+            </div>
+
+            <div className='project_section'>
+              <Project title= 'Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
+            </div>
+            
+            <div className='project_section'> 
+              <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
+            </div>
+
+            <div className='project_section'>
+              <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
+            </div>
+          </div>
+
+          <div className='section'>
+            <h2>Contact</h2>
+            <p>Email: peymon.armand4@gmail.com</p>
+            <a href="https://www.linkedin.com/in/peymon-armand-a9629b258/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
 
         </div>
@@ -104,63 +129,7 @@ function App() {
       </div>
       </>
     )
-  }
-  else {
-    return (
-      
-      <>
-        <div className="page">
-        <div className='header'>
-          <img src='./profile_picture.png' alt='profile_picture'
-            className='profilePicture'/>
-        </div>
-
-        <div className='nav' style={{gap:'1%', marginTop:'1%'}}>
-          <a href="https://github.com/PeymonA" class="btn btn-primary"><i class="bi bi-github"></i>GitHub</a>
-          <a href="https://www.linkedin.com/in/peymon-armand-a9629b258/" class="btn btn-primary"><i class="bi bi-linkedin"></i>LinkedIn</a>
-        </div>
-
-        <div className='body'>
-          <div className='section' style={{margin:'2%', alignItems:'baseline'}}>
-            <Project title='Inner Peace' description={projects.get('Inner Peace').at(0)} link={projects.get('Inner Peace').at(1)}/>
-          </div>
-          <div className='section' style={{display:'flex', flexWrap:'wrap'}}>
-            <img src='./breathe.png' alt='inner_peace_breathe' style={{width:'30%', height:'30%', margin:'1%'}}/>
-            <img src='./game.png' alt='inner_peace_game' style={{width:'30%', height:'30%', margin:'1%'}}/>
-            <img src='./music_player.png' alt='inner_peace_music_player' style={{width:'30%', height:'30%', margin:'1%'}}/>
-            <img src='./stats.png' alt='inner_peace_stats' style={{width:'30%', height:'30%', margin:'1%'}}/>
-          </div>
-
-          <div className='section' style={{marginTop:'10%', marginLeft:'1%' }}>          
-            <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
-          </div>
-          <div className='section'>
-            <img src='./concert_booking.png' alt='concert_booking' style={{width:'90%', height:'90%', marginBottom:'4%'}}/>  
-          </div>
-
-          <div className='section'>
-            <Project title= 'AI Car Classifier' description={projects.get('AI Car Classifier').at(0)} link={projects.get('AI Car Classifier').at(1)}/>
-          </div>
-
-          <div className='section'>
-            <Project title='Bouncing Program' description={projects.get('Bouncing Program').at(0)} link={projects.get('Bouncing Program').at(1)}/>
-          </div>
-          
-          <div className='section'>
-            <Project title='Convolution program' description={projects.get('Convolution program').at(0)} link={projects.get('Convolution program').at(1)}/>
-          </div>
-
-          <div className='section'>
-            <Project title='Threads, forks and locks' description={projects.get('Threads, forks and locks').at(0)} link={projects.get('Threads, forks and locks').at(1)}/>
-          </div>
-          
-        </div>
-
-      </div>
-      </>
-      
-    );
-  }
+  
 }
 
 export default App
