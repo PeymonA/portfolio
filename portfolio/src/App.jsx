@@ -46,6 +46,10 @@ const projects = new Map([
   ['AI Car Classifier', [
     "The Car Classifier is a web application running on Flask which uses a Microsoft Custom Vision AI model which I trained to classify a car from a photo. It can tell you if the car is a Sedan, SUV or Truck. The application uses a model exported to TensorFlow.",
     "https://github.com/PeymonA/AI-Car-Classifier-Webapp"
+  ]],
+  ['Test Driven Development', [
+    "A project that uses TDD principles to create a set of API's. Testing frameworks used are supertest and Jest. APIs run on an express server",
+    "https://github.com/PeymonA/TDD_express"
   ]]
 
 ]);
@@ -81,8 +85,6 @@ function App() {
               </div>
             </div>
 
-
-
             <div className='project_section'>          
               <Project title='A Concert Booking Service' description={projects.get('A Concert Booking Service').at(0)} link={projects.get('A Concert Booking Service').at(1)}/>
               <div className='photo_section'>
@@ -103,6 +105,10 @@ function App() {
               <div className='photo_section'>
                 <img src='./ako_maori.png' alt='ako_maori'/>
               </div>
+            </div>
+
+            <div className='project_section'> 
+              <Project title='Test Driven Development' description={projects.get('Test Driven Development').at(0)} link={projects.get('Test Driven Development').at(1)}/>
             </div>
 
             <div className='project_section'>
