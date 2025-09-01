@@ -5,7 +5,7 @@ import Project from './components/Project'
 
 const projects = new Map([
   ['Inner Peace', [
-    "Inner Peace was my capstone project for the university of auckland. Our client requested an software solution for children struggling with ADHD in the classroom. Inner Peace was implemented in React Native and it contains a game of wack a mole containing nice animations, a combo function and high scores. It contains a mindfulness section which helps with deep breathing aswell as a music player. It contains a self survery of the user's mental health and a statistics section so that the user can see their improvment. And finally it contains data tracking of the users activity and reported mental health sending this data to the cloud for our client",
+    "Me and 5 other students created a mobile application for one of the professors at the university to help with his research on children with ADHD who struggle in the classroom. He wanted to see if a software application can be used to help calm down and refocus a child who is experiencing stress. The technology stack used was Typescript React Native (Expo Framework). Expo SQLite for local storage, and Firebase for cloud storage. I worked on designing and implementing the projects software architecture, the usage tracking and one of the children’s activities – The meditation section. The application was used with a control group of 5+ children. The project was nominated for the Community Impact Award by the university.",
     "https://drive.google.com/file/d/17IZptk32Q9TpkUMUyI05OjCqIccJqAg6/view"
   ]]
 
